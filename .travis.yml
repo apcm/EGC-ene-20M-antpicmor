@@ -20,4 +20,9 @@ script:
   - cp local_settings1.py local_settings.py
   - python ./manage.py test --keepdb -v 2
 notifications:
-  email: false
+  email:
+    recipients:
+      - one@example.com
+      - other@example.com
+    on_success: never
+    on_failure: never
