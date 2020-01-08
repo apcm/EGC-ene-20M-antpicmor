@@ -3,14 +3,9 @@ services:
 - postgresql
 addons:
   postgresql: '9.4'
-before_script:
-- psql -U postgres -c "create user decide password 'decide'"
-- psql -U postgres -c "create database test_decide owner decide"
-- psql -U postgres -c "ALTER USER decide CREATEDB"
 language: python
 python:
 - '3.6'
-- '2.7'
 install:
 - pip install -r requirements.txt
 - pip install codacy-coverage
@@ -25,9 +20,3 @@ notifications:
     - other@example.com
     on_success: never
     on_failure: never
-deploy:
-  provider: heroku
-  app: herokuestudiaregc
-  strategy: git
-  api_key:
-    secure: ggrXhssg2ZzTwZzKJMaWg532FLYc4ATy+yhxZdYCHXeLKWSck1uGqvf5kmuPpZsqYRdjN9DMZ1WU6Jg3J3SbSPSO6VX7BIY+ksRgtA8j2PVwpaByeRZ0T9FVQLtyEM03hopC4FKOgSqgglRPkyLemuSqRU2zURFfq3dhV/OGpAiO8DZYed3izsuXkd6KhswMls5WEY7s+0LWEzx5sJ3BIFDr2d5BCZlgpGyOP6mX0+ntsw+H4ykil2fTCnHHCch3gAkuYKLLWAzfILf5uxdWrHVpwY3t5wSfoXEK3SAR3JHYz5wTNu/E6StvM/Oi2ycnZtFbC0VbgNzb5nHl5WjhCBDKeSAX6YIW4j3aNGbLLX0h9UaHCVdXum2M7jyB0Tlg8LlNjt5BLmtIYmq064O1v0Al008oWpfudv4o5Sqk0duVEzOkp96463SNjo3om/NLotNdV+ag4WWUo3lA2P44VD/7K0JxbXJdnEB+VAZN59+gOqXyuOSPXUm/i36+LdRhC/9DLZKdIUyb/kyzt/qrqMusRsxGK+KBq5SD9AUVQ/eygQPk5ZWqo7jJJyWUfJ8NiCnkBGg0OsIOhmUmtE0QKvgLqSwhMHvgRAEJShkjUaD4rzYDYCMsVtPv/2TdJYaEIU3WKCWMr5PITnJlfGTQwBlNdb3du6NEKJ5iWbykRBI=
