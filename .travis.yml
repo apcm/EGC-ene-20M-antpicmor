@@ -2,7 +2,11 @@ dist: xenial
 services:
 - postgresql
 addons:
+<<<<<<< HEAD
   postgresql: '9.4' hey
+=======
+  postgresql: '9.4'
+>>>>>>> c918d255c2b5d6ff3f94db9995a3602f7e239f9e
 language: python
 python:
 - '3.6'
